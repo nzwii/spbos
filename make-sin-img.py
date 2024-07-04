@@ -2,10 +2,20 @@ import numpy as np
 import cv2
 
 # ディスプレイ
+
 # for iPad 第6世代
-ppi = 264
-x_pix = 1536
-y_pix = 2048
+# ppi = 264
+# x_pix = 1536
+# y_pix = 2048
+# pix_per_mm = ppi / 25.4     # たぶん25.4(mm: 1インチ)は固定値
+# x_mm = x_pix / pix_per_mm
+# y_mm = y_pix / pix_per_mm
+# lam = 0.7 # mm
+
+# for MacBook Pro M3 16インチ
+ppi = 254
+x_pix = 2234
+y_pix = 3456
 pix_per_mm = ppi / 25.4     # たぶん25.4(mm: 1インチ)は固定値
 x_mm = x_pix / pix_per_mm
 y_mm = y_pix / pix_per_mm
@@ -32,4 +42,5 @@ def sin_img(direction="x",bit=8):
     return img
 
 img = sin_img(direction="x", bit=8)
-cv2.imwrite("sin.png",img)
+# cv2.imwrite("sinImg-for-iPad6.png",img)
+cv2.imwrite("sinImg-for-MacBookPro.png",img)
